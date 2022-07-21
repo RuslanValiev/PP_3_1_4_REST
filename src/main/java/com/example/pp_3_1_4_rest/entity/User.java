@@ -33,8 +33,7 @@ public class User implements UserDetails {
     @Column(name = "password")
     private String password;
 
-    public User(Long id, String name, String surname, int age, String email, String password) {
-        this.id = id;
+    public User( String name, String surname, int age, String email, String password) {
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -44,7 +43,7 @@ public class User implements UserDetails {
 
     @ManyToMany(fetch = FetchType.LAZY)
     @Fetch(FetchMode.JOIN) //охотная загрузка
-    @JoinTable(name = "users_role",
+    @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
 
