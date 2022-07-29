@@ -30,10 +30,8 @@ public class DefaultUser {
         roles1.add(roleService.add(new Role("ROLE_ADMIN")));
         roles1.add(roleService.add(new Role("ROLE_USER")));
 
-        User user1 = new User("Vasya", "Vasya", 32, "vc@mail.ru", "$2a$12$AqdNTMQJyf7ExZiLuccYmOIVZD7wtscby1doYvc9eLLTHHW6QA");
+        User user1 = new User("Vasya", "Vasya", 32, "vc@mail.ru", "123456");
         userService.add(user1);
         user1.setRoles(roles1);
     }
-
-
 }
